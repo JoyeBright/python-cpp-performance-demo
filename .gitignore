@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Compiled Python extensions
+*.so
+*.dylib
+
+# C++ executables
+nearest
+
+# macOS
+.DS_Store
+
+# IDEs
+.vscode/
+.idea/
