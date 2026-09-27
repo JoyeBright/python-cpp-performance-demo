@@ -7,9 +7,7 @@ We then expose the C++ implementation to Python using pybind11.
 
 ## Dataset
 
-It is available under:
-
-data/covtype.data
+It is available: data/covtype.data
 
 ## Experiment
 
@@ -26,7 +24,7 @@ approximately 31 million feature comparisons.
 
 Run:
 
-python3 python/nearest.py
+```python3 python/nearest.py```
 
 Record the computation time.
 
@@ -34,7 +32,7 @@ Record the computation time.
 
 Compile:
 
-clang++ -O3 -std=c++17 cpp/nearest.cpp -o nearest
+```clang++ -O3 -std=c++17 cpp/nearest.cpp -o nearest```
 
 Run:
 
@@ -46,16 +44,18 @@ Record the computation time.
 
 Install the dependencies:
 
-python3 -m pip install -r requirements.txt
+```python3 -m pip install -r requirements.txt```
 
 Compile the Python extension:
 
+```
 clang++ -O3 -Wall -shared -std=c++17 \
 -undefined dynamic_lookup \
 $(python3 -m pybind11 --includes) \
 python_cpp/nearest_cpp.cpp \
 -o python_cpp/nearest_cpp$(python3-config --extension-suffix)
+```
 
 Run:
 
-python3 python_cpp/combined.py
+```python3 python_cpp/combined.py```
